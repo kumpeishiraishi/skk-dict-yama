@@ -1,0 +1,19 @@
+* skk-dict-yama
+日本の山に関連した語（山名、沢名、岩壁名、登山用語など）のSKK辞書。
+
+エントリーの修正・追加のご連絡を歓迎します。
+Issuesに記載するか、Pull requestをお願いします。
+
+** DDSKKでの使い方
+辞書ファイルを置きたいディレクトリに移動して、
+#+begin_src shell
+% curl -O https://raw.githubusercontent.com/kumpeishiraishi/skk-dict-yama/main/SKK-JISYO.yama
+#+end_src
+
+=init.el= には以下を追加する：
+#+begin_src emacs-lisp
+(setq skk-extra-jisyo-file-list
+      (list
+       "/path/to/SKK-JISYO.yama"))
+#+end_src
+本辞書ファイルはUTF-8を使用しているので、各自の =skk-jisyo-code= に合わせて文字コードも指定する。
